@@ -5,6 +5,7 @@ public class Pengembalian {
     private LocalDate tanggalKembali;
     private int denda;
 
+    
     public Pengembalian(peminjaman peminjaman, LocalDate tanggalKembali) {
         this.peminjaman = peminjaman;
         this.tanggalKembali = tanggalKembali;
@@ -12,10 +13,12 @@ public class Pengembalian {
         peminjaman.setStatusDipinjam(false); // Ubah status buku menjadi tersedia
     }
 
+    
     public int getDenda() {
         return denda;
     }
 
+    
     @Override
     public String toString() {
         return "Buku: " + peminjaman.getBuku().getJudul() +
