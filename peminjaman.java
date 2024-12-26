@@ -17,6 +17,7 @@ public class peminjaman {
         this.statusDipinjam = true;
     }
 
+    
     public Buku getBuku() {
         return buku;
     }
@@ -41,6 +42,7 @@ public class peminjaman {
         return tanggalBatasKembali;
     }
 
+    
     public int hitungDenda(LocalDate tanggalKembali) {
         if (tanggalKembali.isAfter(tanggalBatasKembali)) {
             long hariTerlambat = ChronoUnit.DAYS.between(tanggalBatasKembali, tanggalKembali);
@@ -49,6 +51,7 @@ public class peminjaman {
         return 0;
     }
 
+    
     @Override
     public String toString() {
         return "Buku: " + buku.getJudul() + " | Dipinjam oleh: " + anggota.getNama() +
