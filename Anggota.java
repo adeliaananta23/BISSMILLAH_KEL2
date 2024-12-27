@@ -9,6 +9,7 @@ public abstract class Anggota {
         this.nomorAnggota = nomorAnggota;
         this.email = email;
         this.tipeKeanggotaan = tipeKeanggotaan;
+
     }
 
     public String getNama() {
