@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class peminjaman {
+public class peminjaman implements Transaksi{
     private Buku buku;
     private Anggota anggota;
     private boolean statusDipinjam;
@@ -17,7 +17,6 @@ public class peminjaman {
         this.statusDipinjam = true;
     }
 
-    
     public Buku getBuku() {
         return buku;
     }
@@ -42,7 +41,6 @@ public class peminjaman {
         return tanggalBatasKembali;
     }
 
-    
     public int hitungDenda(LocalDate tanggalKembali) {
         if (tanggalKembali.isAfter(tanggalBatasKembali)) {
             long hariTerlambat = ChronoUnit.DAYS.between(tanggalBatasKembali, tanggalKembali);
@@ -51,11 +49,20 @@ public class peminjaman {
         return 0;
     }
 
-    
     @Override
     public String toString() {
         return "Buku: " + buku.getJudul() + " | Dipinjam oleh: " + anggota.getNama() +
                 " | Tanggal Pinjam: " + tanggalPinjam + " | Batas Kembali: " + tanggalBatasKembali +
                 " | Status: " + (statusDipinjam ? "Dipinjam" : "Tersedia");
+    }
+
+    @Override
+    public void peminjaman() {
+
+    }
+
+    @Override
+    public void pengembalian() {
+
     }
 }
